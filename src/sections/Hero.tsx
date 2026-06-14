@@ -190,15 +190,16 @@ export default function Hero() {
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => triggerScroll("contact")}
-                className="flex items-center space-x-2 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold shadow-lg hover:shadow-blue-500/20 transition-all cursor-pointer"
+                className="flex items-center space-x-2 px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold shadow-lg hover:shadow-blue-500/20 transition-all cursor-pointer font-sans"
               >
                 <Mail className="h-4.5 w-4.5" />
                 <span>Contact Me</span>
               </button>
               <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
-                className="flex items-center space-x-2 px-5 py-3 rounded-lg border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-200 text-sm font-semibold hover:border-slate-600 transition-all cursor-pointer"
+                href="/cv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 px-5 py-3 rounded-lg border border-slate-800 bg-slate-900/40 hover:bg-slate-900 text-slate-200 text-sm font-semibold hover:border-slate-600 transition-all cursor-pointer font-sans"
               >
                 <FileDown className="h-4.5 w-4.5" />
                 <span>Download Resume</span>
