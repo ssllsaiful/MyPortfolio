@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Md. Saiful Islam | DevOps Engineer & Cloud Infrastructure Architect",
+  title: "Saiful Islam | DevOps Engineer",
   description: "Portfolio of Md. Saiful Islam, featuring AWS/Azure provisioning, CI/CD automation pipelines, Kubernetes clustering, and monitoring telemetry setups.",
   keywords: ["DevOps Engineer", "Cloud Infrastructure", "CI/CD Automation", "Terraform", "Kubernetes", "Docker", "AWS", "Azure"],
 };
@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }` }} />
+      </head>
       <body className="antialiased min-h-screen bg-slate-50 dark:bg-[#0B1120] text-slate-800 dark:text-slate-200">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Navbar />

@@ -1,29 +1,47 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import { Sun, Moon, Terminal, Menu, X } from "lucide-react";
+import { Terminal, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    
+    // Scroll to top immediately on mount
+    window.scrollTo(0, 0);
+
+    // Multiple delayed attempts to handle hydration height shifts
+    const t1 = setTimeout(() => window.scrollTo(0, 0), 100);
+    const t2 = setTimeout(() => window.scrollTo(0, 0), 300);
+
+    // Scroll to top right before reload so the browser caches scroll position at (0, 0)
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   if (!mounted) return null;
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   const navLinks = [
     { id: "about", label: "About" },
@@ -73,25 +91,10 @@ export default function Navbar() {
               {link.label}
             </button>
           ))}
-          
-          {/* Theme toggle */}
-          <button
-            onClick={toggleTheme}
-            className="p-1.5 rounded-lg border border-slate-800 bg-slate-950/20 text-slate-400 hover:text-slate-200 transition-all cursor-pointer"
-            title="Toggle Theme"
-          >
-            {theme === "dark" ? <Sun className="h-4.5 w-4.5" /> : <Moon className="h-4.5 w-4.5" />}
-          </button>
         </nav>
 
         {/* Mobile controls */}
         <div className="flex items-center space-x-3 lg:hidden">
-          <button
-            onClick={toggleTheme}
-            className="p-1.5 rounded-lg border border-slate-800 bg-slate-950/20 text-slate-400 hover:text-slate-200 transition-all cursor-pointer"
-          >
-            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-1.5 rounded-lg border border-slate-800 text-slate-400 hover:text-slate-200 cursor-pointer"

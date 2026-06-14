@@ -36,8 +36,8 @@ export default function Home() {
             <p>DevOps Engineer | Cloud Infrastructure Specialist</p>
           </div>
 
-          <div className="space-y-1 md:text-right">
-            <p className="font-mono text-[10px] text-slate-600">
+          <div className="space-y-2 md:text-right">
+            <p className="font-mono text-[15px] text-slate-600">
               © {new Date().getFullYear()} Md. Saiful Islam. All rights reserved.
             </p>
           </div>

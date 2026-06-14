@@ -13,15 +13,25 @@ export default function Terminal() {
     { text: "Type 'help' to view available commands.", type: "info" },
   ]);
   const [input, setInput] = useState("");
-  const terminalEndRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const isInitialMount = useRef(true);
 
   const focusInput = () => {
     inputRef.current?.focus();
   };
 
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        top: containerRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
   }, [history]);
 
   const handleCommand = async (cmd: string) => {
@@ -169,7 +179,10 @@ export default function Terminal() {
       </div>
 
       {/* Terminal Output Area */}
-      <div className="p-4 flex-1 overflow-y-auto space-y-1.5 scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent">
+      <div 
+        ref={containerRef}
+        className="p-4 flex-1 overflow-y-auto space-y-1.5 scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent"
+      >
         {history.map((line, index) => (
           <div 
             key={index} 
@@ -190,7 +203,6 @@ export default function Terminal() {
             {line.text}
           </div>
         ))}
-        <div ref={terminalEndRef} />
       </div>
 
       {/* Terminal Input Area */}
@@ -202,7 +214,6 @@ export default function Terminal() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className="flex-1 bg-transparent border-none outline-none text-slate-200 font-mono caret-blue-500"
-          autoFocus
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"

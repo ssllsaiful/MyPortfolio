@@ -1,11 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Send, CheckCircle2, AlertTriangle } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -22,41 +17,6 @@ const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<{ type: "success" | "error"; text: string } | null>(null);
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus({ type: "error", text: "All fields are required." });
-      return;
-    }
-
-    setLoading(true);
-    setStatus(null);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-      if (data.success) {
-        setStatus({ type: "success", text: data.message });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus({ type: "error", text: data.error || "Failed to deliver message." });
-      }
-    } catch {
-      setStatus({ type: "error", text: "Network connection failure. Try again later." });
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <section 
       id="contact" 
@@ -73,126 +33,73 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full max-w-5xl mx-auto items-start">
-          
-          {/* Left Side: Contact Information */}
-          <div className="lg:col-span-5 space-y-6">
-            <h3 className="text-xl font-bold text-slate-100">
-              Operations Control Center
-            </h3>
-            <p className="text-xs md:text-sm text-slate-400 leading-relaxed font-sans">
-              Have an architecture bottleneck, or seeking to establish continuous deployments? Send a ping. I am active for consulting, remote positions, and project work.
-            </p>
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-8">
+          <p className="text-xs md:text-sm text-slate-400 leading-relaxed font-sans max-w-lg">
+            Have an architecture bottleneck, or seeking to establish continuous deployments? Send a ping. I am active for consulting, remote positions, and project work.
+          </p>
 
-            <div className="space-y-4 font-mono text-xs md:text-sm text-slate-300">
-              <div className="flex items-center space-x-3 p-4 rounded-lg bg-slate-900/50 border border-slate-800">
-                <Mail className="h-5 w-5 text-cyan-400 shrink-0" />
-                <div>
-                  <p className="text-[10px] text-slate-500 font-bold uppercase">Direct Email</p>
-                  <a href="mailto:sslsaiful.islam@gmail.com" className="hover:text-cyan-400 transition-colors">
-                    sslsaiful.islam@gmail.com
-                  </a>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full font-mono text-xs md:text-sm text-slate-300">
+            {/* Direct Email Card */}
+            <a 
+              href="mailto:sslsaiful.islam@gmail.com" 
+              className="flex items-center space-x-4 p-5 rounded-lg bg-[#152035]/30 border border-slate-800/80 hover:border-cyan-500/30 transition-all shadow-xl group text-left cursor-pointer"
+            >
+              <Mail className="h-6 w-6 text-cyan-400 shrink-0 group-hover:scale-110 transition-transform" />
+              <div className="min-w-0">
+                <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Direct Email</p>
+                <span className="hover:text-cyan-400 transition-colors text-[11px] block truncate">
+                  sslsaiful.islam@gmail.com
+                </span>
               </div>
+            </a>
 
-              <div className="flex items-center space-x-3 p-4 rounded-lg bg-slate-900/50 border border-slate-800">
-                <MapPin className="h-5 w-5 text-rose-400 shrink-0" />
-                <div>
-                  <p className="text-[10px] text-slate-500 font-bold uppercase">Location</p>
-                  <span>Dhaka, Bangladesh</span>
-                </div>
+            {/* WhatsApp Card */}
+            <a 
+              href="https://wa.me/8801521376993?text=Hi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-4 p-5 rounded-lg bg-[#152035]/30 border border-slate-800/80 hover:border-emerald-500/30 transition-all shadow-xl group text-left cursor-pointer"
+            >
+              <MessageCircle className="h-6 w-6 text-emerald-400 shrink-0 group-hover:scale-110 transition-transform" />
+              <div>
+                <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">WhatsApp</p>
+                <span className="hover:text-emerald-400 transition-colors">
+                  +88 01521376993
+                </span>
               </div>
-            </div>
+            </a>
 
-            {/* Social channels */}
-            <div className="flex space-x-4 pt-2">
-              <a
-                href="https://github.com/ssllsaiful"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-4 py-2.5 rounded-lg border border-slate-800 bg-slate-900/50 text-xs font-bold text-slate-400 hover:text-white hover:border-slate-600 transition-all"
-              >
-                <GithubIcon className="h-4.5 w-4.5" />
-                <span>GitHub</span>
-              </a>
-              <a
-                href="https://linkedin.com/in/ssllsaiful"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 px-4 py-2.5 rounded-lg border border-slate-800 bg-slate-900/50 text-xs font-bold text-slate-400 hover:text-white hover:border-slate-600 transition-all"
-              >
-                <LinkedinIcon className="h-4.5 w-4.5" />
-                <span>LinkedIn</span>
-              </a>
+            {/* Location Card */}
+            <div className="flex items-center space-x-4 p-5 rounded-lg bg-[#152035]/30 border border-slate-800/80 text-left shadow-xl">
+              <MapPin className="h-6 w-6 text-rose-400 shrink-0" />
+              <div>
+                <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Location</p>
+                <span>Dhaka, Bangladesh</span>
+              </div>
             </div>
           </div>
 
-          {/* Right Side: Form */}
-          <div className="lg:col-span-7">
-            <Card className="bg-[#152035]/30 border-slate-800 p-6 shadow-xl">
-              <CardContent className="p-0">
-                <form onSubmit={onSubmit} className="space-y-4">
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold font-mono text-slate-400 uppercase">Operator Name</label>
-                    <Input
-                      type="text"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="bg-slate-950 border-slate-850 text-slate-100 text-sm focus:border-blue-500"
-                    />
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold font-mono text-slate-400 uppercase">Communication Socket (Email)</label>
-                    <Input
-                      type="email"
-                      placeholder="operator@domain.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="bg-slate-950 border-slate-850 text-slate-100 text-sm focus:border-blue-500"
-                    />
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold font-mono text-slate-400 uppercase">Transmission Body (Message)</label>
-                    <Textarea
-                      rows={5}
-                      placeholder="Describe your project requirements or infrastructure pipeline details..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="bg-slate-950 border-slate-850 text-slate-100 text-sm focus:border-blue-500"
-                    />
-                  </div>
-
-                  {status && (
-                    <div className={`p-4 rounded-lg flex items-center space-x-2 text-xs font-mono border ${
-                      status.type === "success" 
-                        ? "bg-emerald-950/20 border-emerald-900/50 text-emerald-400" 
-                        : "bg-rose-950/20 border-rose-900/50 text-rose-400"
-                    }`}>
-                      {status.type === "success" ? (
-                        <CheckCircle2 className="h-4 w-4 shrink-0" />
-                      ) : (
-                        <AlertTriangle className="h-4 w-4 shrink-0" />
-                      )}
-                      <span>{status.text}</span>
-                    </div>
-                  )}
-
-                  <Button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 rounded-lg shadow-lg cursor-pointer"
-                  >
-                    <Send className="h-4.5 w-4.5" />
-                    <span>{loading ? "Transmitting Packet..." : "Transmit Message"}</span>
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+          {/* Social channels */}
+          <div className="flex justify-center space-x-6 pt-4 w-full">
+            <a
+              href="https://github.com/ssllsaiful"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-5 py-3 rounded-lg border border-slate-850 bg-slate-900/60 text-xs font-bold text-slate-400 hover:text-white hover:border-slate-600 transition-all shadow-md cursor-pointer"
+            >
+              <GithubIcon className="h-4.5 w-4.5" />
+              <span>GitHub Profile</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/ssllsaiful"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-5 py-3 rounded-lg border border-slate-850 bg-slate-900/60 text-xs font-bold text-slate-400 hover:text-white hover:border-slate-600 transition-all shadow-md cursor-pointer"
+            >
+              <LinkedinIcon className="h-4.5 w-4.5" />
+              <span>LinkedIn Network</span>
+            </a>
           </div>
-
         </div>
       </div>
     </section>

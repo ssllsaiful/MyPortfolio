@@ -143,6 +143,30 @@ export default function About() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Highlighted Language Proficiency Card */}
+            <Card className="bg-[#152035]/40 border-slate-800 p-6 shadow-xl">
+              <CardContent className="p-0 space-y-4">
+                <h4 className="font-bold text-slate-100 flex items-center space-x-2">
+                  <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+                  <span>Language Proficiency</span>
+                </h4>
+                <div className="grid grid-cols-3 gap-4 font-mono text-[10px] md:text-xs">
+                  <div className="p-3.5 rounded-lg bg-cyan-500/5 border border-cyan-500/30 hover:border-cyan-400 transition-all text-center shadow-md shadow-cyan-500/5">
+                    <p className="text-cyan-400/70 font-bold text-[9px] uppercase tracking-wider mb-1">Bangla</p>
+                    <p className="text-cyan-400 font-extrabold text-sm md:text-base">Native</p>
+                  </div>
+                  <div className="p-3.5 rounded-lg bg-blue-500/5 border border-blue-500/30 hover:border-blue-400 transition-all text-center shadow-md shadow-blue-500/5">
+                    <p className="text-blue-400/70 font-bold text-[9px] uppercase tracking-wider mb-1">English</p>
+                    <p className="text-blue-400 font-extrabold text-sm md:text-base">Professional</p>
+                  </div>
+                  <div className="p-3.5 rounded-lg bg-indigo-500/5 border border-indigo-500/30 hover:border-indigo-400 transition-all text-center shadow-md shadow-indigo-500/5">
+                    <p className="text-indigo-400/70 font-bold text-[9px] uppercase tracking-wider mb-1">Japanese</p>
+                    <p className="text-indigo-400 font-extrabold text-sm md:text-base">N5</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
         </div>
