@@ -33,7 +33,7 @@ export default function Hero() {
   useEffect(() => {
     let timer: NodeJS.Timeout;
     const currentTitle = titles[index];
-    
+
     if (isDeleting) {
       timer = setTimeout(() => {
         setDisplayText(currentTitle.substring(0, displayText.length - 1));
@@ -60,12 +60,12 @@ export default function Hero() {
   };
 
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className="relative min-h-screen pt-28 pb-16 flex flex-col items-center justify-center overflow-hidden z-10"
     >
       <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full max-w-7xl">
-        
+
         {/* Left column - Redesigned profile picture morphing blob */}
         <div className="lg:col-span-5 flex flex-col items-center justify-center relative select-none order-2 lg:order-1">
           <motion.div
@@ -75,7 +75,7 @@ export default function Hero() {
             className="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center"
           >
             {/* Morphing gradient outline */}
-            <div 
+            <div
               className="absolute inset-0 bg-gradient-to-tr from-blue-500 via-indigo-500 to-cyan-400 opacity-80 shadow-2xl"
               style={{
                 borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%",
@@ -83,16 +83,16 @@ export default function Hero() {
               }}
             />
             {/* Morphing image crop mask */}
-            <div 
+            <div
               className="absolute inset-1.5 bg-[#0B1120] overflow-hidden"
               style={{
                 borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%",
                 animation: "morph 8s ease-in-out infinite",
               }}
             >
-              <img 
-                src="/my.jpg" 
-                alt="Md. Saiful Islam" 
+              <img
+                src="/my.jpg"
+                alt="Md. Saiful Islam"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -117,7 +117,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            <span>Available for remote projects</span>
+            <span style={{ fontSize: "16px" }}>Available for Remote Work</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-100">
