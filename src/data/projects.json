@@ -1,0 +1,44 @@
+[
+  {
+    "title": "AjkerPatrika CMS Deployment",
+    "tech": ["AWS", "Docker", "NGINX", "PostgreSQL", "Redis", "GitHub Actions"],
+    "description": "High-availability content management system infrastructure designed for a high-traffic news portal. Leveraged AWS Auto Scaling, Application Load Balancers, and Redis caching to handle millions of daily reads with minimal latency.",
+    "features": [
+      "Auto-scaling group with launch templates based on CPU/memory load",
+      "NGINX reverse proxy with SSL certificate management via Let's Encrypt",
+      "PostgreSQL primary-replica setup for high availability database storage",
+      "CI/CD pipeline automated using GitHub Actions with automated deployment to ECS"
+    ],
+    "github": "https://github.com/ssllsaiful",
+    "live": "https://github.com/ssllsaiful",
+    "diagramId": "ajkerpatrika-cms"
+  },
+  {
+    "title": "Dynamic CMS Deployment",
+    "tech": ["Docker", "Jenkins", "AWS", "PostgreSQL", "Bash Scripting"],
+    "description": "An automated infrastructure system that provisions independent preview/staging environments dynamically for developer feature branches. Integrated with Git hooks and Jenkins to spin up isolated container stacks.",
+    "features": [
+      "Dynamic creation of staging environments using subdomains",
+      "Jenkins pipeline that builds, tests, and deploys containers per branch push",
+      "Automated cleanup of inactive developer environments after 3 days of idle time",
+      "Isolated container networks to ensure database security between previews"
+    ],
+    "github": "https://github.com/ssllsaiful",
+    "live": "https://github.com/ssllsaiful",
+    "diagramId": "dynamic-cms"
+  },
+  {
+    "title": "Django Production Infrastructure",
+    "tech": ["Docker", "NGINX", "AWS", "Redis", "Celery", "PostgreSQL"],
+    "description": "Enterprise-grade production setup for a complex Django-based web application with async background task workers (Celery/Redis). Designed with secure VPC networking and automated backup scripts.",
+    "features": [
+      "Celery worker queues containerized and managed for background jobs",
+      "Secured environment under private VPC subnets with NAT gateways",
+      "Automated database backup pipelines uploading encrypted snapshots to S3 daily",
+      "Gunicorn application server optimized behind NGINX reverse-proxy buffering"
+    ],
+    "github": "https://github.com/ssllsaiful",
+    "live": "https://github.com/ssllsaiful",
+    "diagramId": "django-prod"
+  }
+]

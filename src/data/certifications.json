@@ -1,0 +1,23 @@
+[
+  {
+    "title": "AWS Cloud Technical Essentials",
+    "issuer": "Amazon Web Services (AWS)",
+    "date": "2024",
+    "credentialId": "AWS-CTE-10023",
+    "badge": "aws-essentials.png"
+  },
+  {
+    "title": "MTCNA (MikroTik Certified Network Associate)",
+    "issuer": "MikroTik",
+    "date": "2023",
+    "credentialId": "MTCNA-8849201",
+    "badge": "mikrotik.png"
+  },
+  {
+    "title": "CCNA (Cisco Certified Network Associate) Routing & Switching",
+    "issuer": "Cisco",
+    "date": "2023",
+    "credentialId": "CCNA-RS-901123",
+    "badge": "cisco-ccna.png"
+  }
+]

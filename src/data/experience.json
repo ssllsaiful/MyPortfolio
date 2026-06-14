@@ -1,0 +1,29 @@
+[
+  {
+    "role": "Jr. DevOps Engineer",
+    "company": "JVAI, Bitopia Group",
+    "location": "Dhaka, Bangladesh (Remote)",
+    "period": "Dec 2025 – Present",
+    "description": [
+      "Automated application deployments using Jenkins and GitHub Actions, reducing manual overhead.",
+      "Containerized legacy and modern web applications using Docker and orchestrated development workspaces.",
+      "Configured NGINX reverse proxies for load balancing, routing, and SSL termination.",
+      "Built resilient, high-speed CI/CD pipelines for Next.js (frontend) and Django (backend) applications.",
+      "Managed multi-cloud environments (AWS, Azure) and shared hosting architectures.",
+      "Administered and optimized PostgreSQL database servers for staging and production loads."
+    ]
+  },
+  {
+    "role": "Jr. DevOps Engineer",
+    "company": "Iddehubbd Ltd",
+    "location": "Dhaka, Bangladesh",
+    "period": "Apr 2023 – Nov 2025",
+    "description": [
+      "Provisioned, configured, and managed AWS cloud infrastructure including EC2, RDS, S3, and Lambda functions.",
+      "Engineered automated CI/CD pipelines to streamline code delivery to production environments.",
+      "Collaborated closely with software development teams to optimize application designs for cloud-native deployment.",
+      "Implemented elastic AWS Auto-Scaling groups and Application Load Balancers (ALB) to handle traffic surges.",
+      "Deployed and configured Prometheus and Grafana monitoring stacks to track cluster health and application metrics."
+    ]
+  }
+]
