@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Saiful Islam | DevOps Engineer",
+  title: "Md. Saiful Islam | DevOps Engineer",
   description: "Portfolio of Md. Saiful Islam, featuring AWS/Azure provisioning, CI/CD automation pipelines, Kubernetes clustering, and monitoring telemetry setups.",
   keywords: ["DevOps Engineer", "Cloud Infrastructure", "CI/CD Automation", "Terraform", "Kubernetes", "Docker", "AWS", "Azure"],
 };
