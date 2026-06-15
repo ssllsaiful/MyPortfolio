@@ -78,8 +78,8 @@ export default function About() {
   ];
 
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       className="relative py-24 border-t border-slate-900 bg-[#070b14]/30 z-10"
     >
       <div className="container mx-auto px-4 md:px-8 w-full max-w-7xl">
@@ -94,16 +94,16 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Side: Philosophy Cards */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="text-2xl font-bold text-slate-100 mb-6">
               DevOps Philosophy & Strategy
             </h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {philosophyItems.map((item, index) => (
-                <div 
+                <div
                   key={index}
                   className="p-5 rounded-lg border border-slate-800/80 bg-slate-900/10 hover:bg-slate-900/20 transition-all flex flex-col space-y-3"
                 >
@@ -153,15 +153,15 @@ export default function About() {
                 </h4>
                 <div className="grid grid-cols-3 gap-4 font-mono text-[10px] md:text-xs">
                   <div className="p-3.5 rounded-lg bg-cyan-500/5 border border-cyan-500/30 hover:border-cyan-400 transition-all text-center shadow-md shadow-cyan-500/5">
-                    <p className="text-cyan-400/70 font-bold text-[9px] uppercase tracking-wider mb-1">Bangla</p>
+                    <p className="text-cyan-400/70 font-bold text-[12px] uppercase tracking-wider mb-1">Bangla</p>
                     <p className="text-cyan-400 font-extrabold text-sm md:text-base">Native</p>
                   </div>
                   <div className="p-3.5 rounded-lg bg-blue-500/5 border border-blue-500/30 hover:border-blue-400 transition-all text-center shadow-md shadow-blue-500/5">
-                    <p className="text-blue-400/70 font-bold text-[9px] uppercase tracking-wider mb-1">English</p>
+                    <p className="text-blue-400/70 font-bold text-[12px] uppercase tracking-wider mb-1">English</p>
                     <p className="text-blue-400 font-extrabold text-sm md:text-base">Professional</p>
                   </div>
                   <div className="p-3.5 rounded-lg bg-indigo-500/5 border border-indigo-500/30 hover:border-indigo-400 transition-all text-center shadow-md shadow-indigo-500/5">
-                    <p className="text-indigo-400/70 font-bold text-[9px] uppercase tracking-wider mb-1">Japanese</p>
+                    <p className="text-indigo-400/70 font-bold text-[12px] uppercase tracking-wider mb-1">Japanese</p>
                     <p className="text-indigo-400 font-extrabold text-sm md:text-base">N5</p>
                   </div>
                 </div>

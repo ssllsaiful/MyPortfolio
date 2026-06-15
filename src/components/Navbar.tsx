@@ -45,6 +45,7 @@ export default function Navbar() {
 
   const navLinks = [
     { id: "about", label: "About" },
+    { id: "education", label: "Education" },
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Timeline" },
     { id: "projects", label: "Deployments" },

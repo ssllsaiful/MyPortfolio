@@ -87,7 +87,7 @@ export default function BlogsSection({ posts }: BlogsSectionProps) {
 
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {post.tags.map((tag, tagIdx) => (
-                      <Badge key={tagIdx} className="bg-slate-900 border-slate-800 text-slate-400 font-mono text-[9px] hover:bg-slate-800">
+                      <Badge key={tagIdx} className="bg-slate-900 border-slate-800 text-slate-400 font-mono text-[12px] hover:bg-slate-800">
                         {tag}
                       </Badge>
                     ))}
@@ -125,7 +125,7 @@ export default function BlogsSection({ posts }: BlogsSectionProps) {
                 </DialogTitle>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {selectedPost.tags.map((tag, tagIdx) => (
-                    <Badge key={tagIdx} className="bg-slate-900 border-slate-800 text-slate-300 font-mono text-[9px]">
+                    <Badge key={tagIdx} className="bg-slate-900 border-slate-800 text-slate-300 font-mono text-[12px]">
                       {tag}
                     </Badge>
                   ))}

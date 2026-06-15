@@ -1,6 +1,7 @@
 import { getBlogPosts } from "@/lib/blogs";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
+import Education from "@/sections/education";
 import Skills from "@/sections/Skills";
 import Experience from "@/sections/Experience";
 import Projects from "@/sections/Projects";
@@ -17,6 +18,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen">
       <Hero />
       <About />
+      <Education />
       <Skills />
       <Experience />
       <Projects />
@@ -33,7 +35,7 @@ export default function Home() {
               <Terminal className="h-4 w-4 text-cyan-400" />
               <span>Md. Saiful Islam</span>
             </div>
-            <p>DevOps Engineer | Cloud Infrastructure Specialist</p>
+            <p>DevOps Engineer</p>
           </div>
 
           <div className="space-y-2 md:text-right">

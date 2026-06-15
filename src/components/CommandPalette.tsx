@@ -22,7 +22,8 @@ import {
   Award, 
   Network, 
   Mail, 
-  FileText 
+  FileText,
+  GraduationCap
 } from "lucide-react";
 
 export default function CommandPalette() {
@@ -79,6 +80,10 @@ export default function CommandPalette() {
             <CommandItem onSelect={() => runCommand(() => scrollToSection("about"))}>
               <User className="mr-2 h-4 w-4" />
               <span>Scroll to About Me</span>
+            </CommandItem>
+            <CommandItem onSelect={() => runCommand(() => scrollToSection("education"))}>
+              <GraduationCap className="mr-2 h-4 w-4" />
+              <span>Scroll to Education</span>
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => scrollToSection("skills"))}>
               <Cpu className="mr-2 h-4 w-4" />

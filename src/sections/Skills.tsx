@@ -3,29 +3,29 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import skillsData from "@/data/skills.json";
-import { 
-  Server, 
-  HardDrive, 
-  ShieldCheck, 
-  Network, 
-  Database, 
-  GitPullRequest, 
-  TrendingUp, 
-  Globe, 
-  Cpu, 
-  Infinity as InfinityIcon, 
-  Box, 
-  Boxes, 
-  Wrench, 
-  GitMerge, 
-  Terminal, 
-  Settings, 
-  Activity, 
-  LineChart, 
-  Zap, 
-  Shuffle, 
-  ArrowLeftRight, 
-  GitFork, 
+import {
+  Server,
+  HardDrive,
+  ShieldCheck,
+  Network,
+  Database,
+  GitPullRequest,
+  TrendingUp,
+  Globe,
+  Cpu,
+  Infinity as InfinityIcon,
+  Box,
+  Boxes,
+  Wrench,
+  GitMerge,
+  Terminal,
+  Settings,
+  Activity,
+  LineChart,
+  Zap,
+  Shuffle,
+  ArrowLeftRight,
+  GitFork,
   Cable,
   FolderDot
 } from "lucide-react";
@@ -100,8 +100,8 @@ function SkillProgress({ name, level, iconName }: SkillProgressProps) {
 
 export default function Skills() {
   return (
-    <section 
-      id="skills" 
+    <section
+      id="skills"
       className="relative py-24 bg-[#0B1120] border-t border-slate-900 z-10"
     >
       <div className="container mx-auto px-4 md:px-8 w-full max-w-7xl">
@@ -118,7 +118,7 @@ export default function Skills() {
         {/* Dynamic Skill Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {skillsData.map((category, catIdx) => (
-            <div 
+            <div
               key={catIdx}
               className="p-6 md:p-8 rounded-xl border border-slate-800 bg-slate-900/10 hover:border-slate-800/80 transition-all flex flex-col space-y-6"
             >
@@ -126,10 +126,10 @@ export default function Skills() {
                 <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
                 <span>{category.category}</span>
               </h3>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {category.skills.map((skill, skIdx) => (
-                  <SkillProgress 
+                  <SkillProgress
                     key={skIdx}
                     name={skill.name}
                     level={skill.level}

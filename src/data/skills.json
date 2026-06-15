@@ -2,64 +2,176 @@
   {
     "category": "Cloud Computing",
     "skills": [
-      { "name": "AWS EC2", "level": 90, "icon": "server" },
-      { "name": "AWS S3", "level": 95, "icon": "hard-drive" },
-      { "name": "AWS IAM", "level": 85, "icon": "shield-check" },
-      { "name": "AWS VPC", "level": 85, "icon": "network" },
-      { "name": "AWS RDS", "level": 90, "icon": "database" },
-      { "name": "AWS Load Balancer", "level": 90, "icon": "git-pull-request" },
-      { "name": "AWS Auto Scaling", "level": 85, "icon": "trending-up" },
-      { "name": "Azure App Service", "level": 80, "icon": "globe" },
-      { "name": "Azure Virtual Machines", "level": 85, "icon": "cpu" },
-      { "name": "Azure DevOps", "level": 80, "icon": "infinity" }
+      {
+        "name": "AWS EC2",
+        "level": 90,
+        "icon": "server"
+      },
+      {
+        "name": "AWS S3",
+        "level": 95,
+        "icon": "hard-drive"
+      },
+      {
+        "name": "AWS IAM",
+        "level": 85,
+        "icon": "shield-check"
+      },
+      {
+        "name": "AWS VPC",
+        "level": 85,
+        "icon": "network"
+      },
+      {
+        "name": "AWS RDS",
+        "level": 90,
+        "icon": "database"
+      },
+      {
+        "name": "AWS Load Balancer",
+        "level": 90,
+        "icon": "git-pull-request"
+      },
+      {
+        "name": "AWS Auto Scaling",
+        "level": 85,
+        "icon": "trending-up"
+      },
+      {
+        "name": "Azure App Service",
+        "level": 80,
+        "icon": "globe"
+      },
+      {
+        "name": "Azure Virtual Machines",
+        "level": 85,
+        "icon": "cpu"
+      },
+      {
+        "name": "Azure DevOps",
+        "level": 80,
+        "icon": "infinity"
+      }
     ]
   },
   {
     "category": "Containers & Orchestration",
     "skills": [
-      { "name": "Docker", "level": 95, "icon": "box" },
-      { "name": "Docker Compose", "level": 95, "icon": "boxes" },
-      { "name": "Kubernetes", "level": 85, "icon": "container" }
+      {
+        "name": "Docker",
+        "level": 95,
+        "icon": "box"
+      },
+      {
+        "name": "Docker Compose",
+        "level": 95,
+        "icon": "boxes"
+      },
+      {
+        "name": "Kubernetes",
+        "level": 85,
+        "icon": "container"
+      }
     ]
   },
   {
     "category": "CI/CD Pipelines",
     "skills": [
-      { "name": "Jenkins", "level": 90, "icon": "wrench" },
-      { "name": "GitHub Actions", "level": 95, "icon": "github" },
-      { "name": "GitLab CI", "level": 80, "icon": "git-merge" }
+      {
+        "name": "Jenkins",
+        "level": 90,
+        "icon": "wrench"
+      },
+      {
+        "name": "GitHub Actions",
+        "level": 95,
+        "icon": "github"
+      },
+      {
+        "name": "GitLab CI",
+        "level": 80,
+        "icon": "git-merge"
+      }
     ]
   },
   {
     "category": "Infrastructure as Code",
     "skills": [
-      { "name": "Terraform", "level": 85, "icon": "terminal" },
-      { "name": "Ansible", "level": 80, "icon": "settings" }
+      {
+        "name": "Terraform",
+        "level": 85,
+        "icon": "terminal"
+      },
+      {
+        "name": "Ansible",
+        "level": 80,
+        "icon": "settings"
+      }
     ]
   },
   {
     "category": "Monitoring & Logging",
     "skills": [
-      { "name": "Prometheus", "level": 85, "icon": "activity" },
-      { "name": "Grafana", "level": 90, "icon": "line-chart" }
+      {
+        "name": "Prometheus",
+        "level": 85,
+        "icon": "activity"
+      },
+      {
+        "name": "Grafana",
+        "level": 90,
+        "icon": "line-chart"
+      }
     ]
   },
   {
     "category": "Databases & Caching",
     "skills": [
-      { "name": "PostgreSQL", "level": 85, "icon": "database" },
-      { "name": "MySQL", "level": 80, "icon": "database" },
-      { "name": "MSSQL", "level": 75, "icon": "database" },
-      { "name": "Redis", "level": 85, "icon": "zap" }
+      {
+        "name": "PostgreSQL",
+        "level": 85,
+        "icon": "database"
+      },
+      {
+        "name": "MySQL",
+        "level": 80,
+        "icon": "database"
+      },
+      {
+        "name": "MSSQL",
+        "level": 75,
+        "icon": "database"
+      },
+      {
+        "name": "Redis",
+        "level": 85,
+        "icon": "zap"
+      }
     ]
   },
   {
     "category": "Networking & Servers",
     "skills": [
-      { "name": "NGINX", "level": 90, "icon": "shuffle" },
-      { "name": "Reverse Proxy", "level": 90, "icon": "arrow-left-right" },
-      { "name": "Load Balancing", "level": 85, "icon": "git-fork" },
-      { "name": "CCNA", "level": 80, "icon": "cable" }
+      {
+        "name": "NGINX",
+        "level": 90,
+        "icon": "shuffle"
+      },
+      {
+        "name": "Reverse Proxy",
+        "level": 90,
+        "icon": "arrow-left-right"
+      },
+      {
+        "name": "Load Balancing",
+        "level": 85,
+        "icon": "git-fork"
+      },
+      {
+        "name": "CCNA",
+        "level": 80,
+        "icon": "cable"
+      }
     ]
   }
 ]
